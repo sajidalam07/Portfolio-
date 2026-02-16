@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,45 +17,45 @@
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
         body { background-color: var(--bg-dark); color: var(--text-main); line-height: 1.6; scroll-behavior: smooth; }
 
-        /* Animation for Image */
+        /* Floating Image Animation */
         @keyframes float {
             0% { transform: translateY(0px); }
             50% { transform: translateY(-15px); }
             100% { transform: translateY(0px); }
         }
 
-        /* Hero Section */
+        /* Reduced Space Header Section */
         header {
-            height: 100vh;
+            min-height: 70vh; /* Reduced from 100vh to remove extra space */
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
             background: radial-gradient(circle at top right, #0c4a6e, #020617);
-            padding: 20px;
+            padding: 40px 20px 20px 20px; /* Adjusted padding */
         }
 
         .profile-img {
-            width: 180px;
-            height: 180px;
-            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; /* Trendy Shape */
+            width: 170px;
+            height: 170px;
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
             object-fit: cover;
             border: 4px solid var(--primary);
             animation: float 4s ease-in-out infinite;
-            margin-bottom: 25px;
+            margin-bottom: 15px; /* Reduced space below image */
             box-shadow: 0 0 30px rgba(56, 189, 248, 0.3);
         }
 
-        h1 { font-size: 3.5rem; letter-spacing: -1px; margin-bottom: 10px; }
+        h1 { font-size: 3rem; letter-spacing: -1px; margin-bottom: 5px; } /* Tightened margin */
         .accent { color: var(--primary); }
-        .subtitle { font-size: 1.3rem; color: var(--text-dim); margin-bottom: 30px; }
+        .subtitle { font-size: 1.2rem; color: var(--text-dim); margin-bottom: 20px; } /* Reduced space below subtitle */
 
-        .container { max-width: 1000px; margin: 0 auto; padding: 60px 20px; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 20px 20px 60px 20px; } /* Reduced top padding */
 
         /* Sections Styling */
-        section { margin-bottom: 60px; }
-        h2 { font-size: 2rem; margin-bottom: 30px; border-bottom: 2px solid var(--primary); display: inline-block; padding-bottom: 5px; }
+        section { margin-bottom: 50px; }
+        h2 { font-size: 1.8rem; margin-bottom: 20px; border-bottom: 2px solid var(--primary); display: inline-block; padding-bottom: 5px; }
 
         /* Skills Grid */
         .skills-container { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
@@ -79,13 +79,14 @@
         /* Contact & Buttons */
         .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; }
         .contact-item { background: #111827; padding: 15px; border-radius: 10px; text-align: center; text-decoration: none; color: white; border: 1px solid #1e293b; }
-        .btn-main { background: var(--primary); color: var(--bg-dark); padding: 12px 30px; border-radius: 8px; text-decoration: none; font-weight: 700; margin-top: 20px; display: inline-block; }
+        .btn-main { background: var(--primary); color: var(--bg-dark); padding: 12px 30px; border-radius: 8px; text-decoration: none; font-weight: 700; margin-top: 10px; display: inline-block; }
 
         footer { text-align: center; padding: 40px; color: var(--text-dim); border-top: 1px solid #1e293b; }
 
         @media (max-width: 768px) {
-            h1 { font-size: 2.5rem; }
+            h1 { font-size: 2.2rem; }
             .skills-container { grid-template-columns: 1fr; }
+            header { min-height: 60vh; }
         }
     </style>
 </head>
@@ -104,7 +105,7 @@
         
         <section id="about">
             <h2>About Me</h2>
-            <p style="color: var(--text-dim);">I am a dedicated Data Analyst with a strong foundation in transforming raw data into actionable insights. Expert in statistical modeling and machine learning, I focus on helping organizations make data-driven decisions through advanced visualization and predictive analytics.</p>
+            <p style="color: var(--text-dim);">I am a results-driven Data Analyst with a passion for transforming raw, complex data into meaningful insights. With expertise in <b>SQL, Python, and Machine Learning</b>, I focus on solving real-world business problems through statistical modeling and data storytelling. My goal is to bridge the gap between numbers and strategy to drive organizational growth.</p>
         </section>
 
         <section id="skills">
@@ -114,21 +115,21 @@
                     <h3>Technical Skills</h3>
                     <div class="tags">
                         <span class="tag">SQL (PostgreSQL/MySQL)</span>
-                        <span class="tag">Python/R Programming</span>
+                        <span class="tag">Microsoft Excel</span>
                         <span class="tag">Machine Learning</span>
-                        <span class="tag">Advanced Excel</span>
-                        <span class="tag">Statistical Modeling</span>
-                        <span class="tag">Data Cleaning & Wrangling</span>
+                        <span class="tag">Statistical Programming</span>
+                        <span class="tag">Data Collection & Cleaning</span>
+                        <span class="tag">Mathematical Skills</span>
                     </div>
                 </div>
                 <div class="skill-box">
                     <h3>Soft Skills & Tools</h3>
                     <div class="tags">
-                        <span class="tag">Data Storytelling</span>
+                        <span class="tag">Data Visualization</span>
+                        <span class="tag">Communication</span>
                         <span class="tag">Critical Thinking</span>
                         <span class="tag">Tableau / Power BI</span>
                         <span class="tag">Business Intelligence</span>
-                        <span class="tag">Effective Communication</span>
                         <span class="tag">Project Management</span>
                     </div>
                 </div>
@@ -140,12 +141,12 @@
             
             <div class="project-card">
                 <h4>1. E-commerce Sales Performance Dashboard</h4>
-                <p>Created an interactive dashboard using SQL and Tableau to identify 20% revenue leakage and optimize inventory turnover.</p>
+                <p>Created an interactive dashboard using SQL and Tableau to identify revenue leakage and optimize inventory turnover.</p>
             </div>
 
             <div class="project-card">
                 <h4>2. Customer Churn Prediction Model</h4>
-                <p>Developed a Machine Learning model (Random Forest) to predict customer attrition with 92% accuracy, helping reduce churn rates.</p>
+                <p>Developed a Machine Learning model to predict customer attrition with high accuracy, helping reduce churn rates.</p>
             </div>
 
             <div class="project-card">
@@ -155,12 +156,12 @@
 
             <div class="project-card">
                 <h4>4. Supply Chain Optimization</h4>
-                <p>Used Data Collection & Cleaning techniques to streamline warehouse logistics, reducing delivery time by 15%.</p>
+                <p>Used Data Collection & Cleaning techniques to streamline warehouse logistics, reducing delivery time significantly.</p>
             </div>
 
             <div class="project-card">
                 <h4>5. Social Media Sentiment Analysis</h4>
-                <p>Automated the collection of YouTube/Twitter data to analyze public sentiment trends using Natural Language Processing (NLP).</p>
+                <p>Automated the collection of YouTube data to analyze public sentiment trends using Natural Language Processing (NLP).</p>
             </div>
         </section>
 
