@@ -779,4 +779,785 @@
       width: 45px;
       height: 45px;
       border-radius: 50%;
+      background: var(--gradient-primary);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      opacity: 0;
+      pointer-events: none;
+      transition: var(--transition);
+      z-index: 900;
+      box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+    }
+
+    .back-to-top.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    /* -------------------------------------------------------------------------- */
+    /* RESPONSIVE DESIGN                                                          */
+    /* -------------------------------------------------------------------------- */
+    @media (max-width: 992px) {
+      .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .hero-text p {
+        margin: 0 auto 2rem auto;
+      }
+      .hero-btns, .social-links {
+        justify-content: center;
+      }
+      .about-grid, .contact-wrapper {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 75%;
+        height: 100vh;
+        background: var(--bg-dark);
+        flex-direction: column;
+        justify-content: center;
+        transition: 0.4s ease;
+        border-left: 1px solid var(--border-color);
+      }
+      .nav-links.active {
+        right: 0;
+      }
+      .menu-btn {
+        display: block;
+      }
+      .hero-text h1 {
+        font-size: 2.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="cursor-dot"></div>
+  <div class="cursor-outline"></div>
+
+  <!-- Scroll Progress -->
+  <div id="scroll-progress"></div>
+
+  <!-- Canvas Background for Particles/Neural Net -->
+  <canvas id="canvas-bg"></canvas>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="#" class="logo">&lt;Sajid<span>.AI /&gt;</span></a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li>
+          <button class="theme-toggle" id="theme-btn" aria-label="Toggle Theme">
+            <i class="fa-solid me-2 fa-moon"></i>
+          </button>
+        </li>
+      </ul>
+      <button class="menu-btn" id="menu-toggle" aria-label="Toggle Navigation">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h3>Hello, World! I'm</h3>
+        <h1>Md Sajid Alam</h1>
+        <h2><span class="typing-text"></span></h2>
+        <p>Turning Data Into Intelligence. Final-year Computer Science Engineering student dedicated to solving complex real-world problems through Machine Learning, Deep Learning, and Predictive Analytics.</p>
+        <div class="hero-btns">
+          <a href="#contact" class="btn btn-primary"><i class="fa-solid fa-envelope"></i> Get In Touch</a>
+          <a href="#" class="btn btn-outline"><i class="fa-solid fa-download"></i> Download CV</a>
+        </div>
+        <div class="social-links">
+          <a href="https://github.com" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/md-sajid-alam-3708352b7" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="mailto:rahisajid656@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+          <a href="https://youtube.com/@aadarshspectrum" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="hero-avatar">
+        <div class="avatar-wrapper">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80" alt="Md Sajid Alam" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Me -->
+  <section class="section container" id="about">
+    <h2 class="section-title">About <span>Me</span></h2>
+    <p class="section-subtitle">Passionate about extracting actionable insights and constructing intelligent algorithmic architectures.</p>
+    <div class="about-grid">
+      <div class="glass-card about-text">
+        <h3>Building the Future with Data & AI</h3>
+        <p>I am a Computer Science Engineering student driven by a deep fascination with Data Science and Artificial Intelligence. My journey revolves around parsing raw data into intuitive predictive models and building end-to-end Machine Learning pipelines.</p>
+        <p>I thrive at the intersection of mathematical theory and practical code implementation. Whether optimizing hyper-parameters or writing neural network configurations, I focus on clean, scalable, and impact-driven outcomes.</p>
+      </div>
+      <div class="about-highlights">
+        <div class="glass-card highlight-card">
+          <h4>Analytical Mindset</h4>
+          <p>Proficient in statistics, algorithm optimization, and exploratory analysis.</p>
+        </div>
+        <div class="glass-card highlight-card">
+          <h4>Continuous Learner</h4>
+          <p>Consistently updating knowledge with Generative AI and modern AI stacks.</p>
+        </div>
+        <div class="glass-card highlight-card">
+          <h4>Problem Solver</h4>
+          <p>Designing structured algorithms for scalable, production-ready solutions.</p>
+        </div>
+        <div class="glass-card highlight-card">
+          <h4>Collaborative</h4>
+          <p>Strong technical communicator focused on cross-functional achievements.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="section container" id="skills">
+    <h2 class="section-title">Technical <span>Skills</span></h2>
+    <p class="section-subtitle">Core technical skills, data tools, and algorithmic proficiencies.</p>
+    <div class="skills-categories">
       
+      <!-- Programming Languages -->
+      <div class="glass-card skill-category">
+        <h3><i class="fa-solid fa-code"></i> Programming</h3>
+        <div class="skill-item">
+          <div class="skill-info"><span>Python</span><span>90%</span></div>
+          <div class="skill-bar"><div class="skill-progress" data-width="90%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-info"><span>C++</span><span>80%</span></div>
+          <div class="skill-bar"><div class="skill-progress" data-width="80%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-info"><span>SQL</span><span>85%</span></div>
+          <div class="skill-bar"><div class="skill-progress" data-width="85%"></div></div>
+        </div>
+      </div>
+
+      <!-- Data Science & Analytics -->
+      <div class="glass-card skill-category">
+        <h3><i class="fa-solid fa-chart-pie"></i> Data Science</h3>
+        <div class="skill-item">
+          <div class="skill-info"><span>NumPy & Pandas</span><span>92%</span></div>
+          <div class="skill-bar"><div class="skill-progress" data-width="92%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-info"><span>Matplotlib & Seaborn</span><span>88%</span></div>
+          <div class="skill-bar"><div class="skill-progress" data-width="88%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-info"><span>Scikit-Learn</span><span>85%</span></div>
+          <div class="skill-bar"><div class="skill-progress" data-width="85%"></div></div>
+        </div>
+      </div>
+
+      <!-- Machine & Deep Learning -->
+      <div class="glass-card skill-category">
+        <h3><i class="fa-solid fa-brain"></i> Machine & Deep Learning</h3>
+        <div class="skill-item">
+          <div class="skill-info"><span>Regression & Classification</span><span>88%</span></div>
+          <div class="skill-bar"><div class="skill-progress" data-width="88%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-info"><span>TensorFlow & Keras</span><span>78%</span></div>
+          <div class="skill-bar"><div class="skill-progress" data-width="78%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-info"><span>Feature Engineering & Evaluation</span><span>85%</span></div>
+          <div class="skill-bar"><div class="skill-progress" data-width="85%"></div></div>
+        </div>
+      </div>
+      <!-- Tools and Databases Badges -->
+    <div style="margin-top: 3rem;">
+      <h3 style="text-align: center; margin-bottom: 1.5rem; color: var(--text-main);">Databases & Tools Ecosystem</h3>
+      <div class="tools-tags" style="justify-content: center;">
+        <span class="tool-tag"><i class="fa-solid fa-database"></i> MySQL</span>
+        <span class="tool-tag"><i class="fa-solid fa-database"></i> PostgreSQL</span>
+        <span class="tool-tag"><i class="fa-solid fa-database"></i> SQLite</span>
+        <span class="tool-tag"><i class="fa-brands fa-git-alt"></i> Git</span>
+        <span class="tool-tag"><i class="fa-brands fa-github"></i> GitHub</span>
+        <span class="tool-tag"><i class="fa-solid fa-book-open"></i> Jupyter Notebook</span>
+        <span class="tool-tag"><i class="fa-solid fa-code"></i> VS Code</span>
+        <span class="tool-tag"><i class="fa-solid fa-cloud"></i> Google Colab</span>
+        <span class="tool-tag"><i class="fa-solid fa-chart-bar"></i> Power BI</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="section container" id="projects">
+    <h2 class="section-title">Featured <span>Projects</span></h2>
+    <p class="section-subtitle">Real-world applications built with machine learning models and clean application logic.</p>
+    
+    <div class="projects-grid">
+      
+      <!-- Project 1 -->
+      <div class="glass-card project-card">
+        <img src="https://images.unsplash.com/photo-1534972195531-d756b9bfa9f2?auto=format&fit=crop&w=600&q=80" alt="Student Management System" class="project-img"/>
+        <div class="project-content">
+          <h3 class="project-title">Student Management System</h3>
+          <p class="project-desc">A application that tracks academic records, standardizes database queries, and manages CRUD operations with efficiency.</p>
+          <div class="project-tech">
+            <span class="tech-pill">Python</span>
+            <span class="tech-pill">MySQL</span>
+            <span class="tech-pill">OOP</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="btn btn-outline"><i class="fa-brands fa-github"></i> Code</a>
+            <a href="#" class="btn btn-primary"><i class="fa-solid fa-arrow-up-right-from-square"></i> Demo</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="glass-card project-card">
+        <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=600&q=80" alt="Resume Analyzer" class="project-img"/>
+        <div class="project-content">
+          <h3 class="project-title">AI Resume Analyzer</h3>
+          <p class="project-desc">NLP-based resume screening tool that extracts keywords, parses format structures, and ranks profiles for specific job descriptions.</p>
+          <div class="project-tech">
+            <span class="tech-pill">Python</span>
+            <span class="tech-pill">NLP</span>
+            <span class="tech-pill">Scikit-learn</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="btn btn-outline"><i class="fa-brands fa-github"></i> Code</a>
+            <a href="#" class="btn btn-primary"><i class="fa-solid fa-arrow-up-right-from-square"></i> Demo</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="glass-card project-card">
+        <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=600&q=80" alt="Stock Price Prediction" class="project-img"/>
+        <div class="project-content">
+          <h3 class="project-title">Stock Price Prediction</h3>
+          <p class="project-desc">Time-series forecasting model using historical trend analysis to estimate equity shifts with high precision evaluation metrics.</p>
+          <div class="project-tech">
+            <span class="tech-pill">Pandas</span>
+            <span class="tech-pill">Matplotlib</span>
+            <span class="tech-pill">LSTM</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="btn btn-outline"><i class="fa-brands fa-github"></i> Code</a>
+            <a href="#" class="btn btn-primary"><i class="fa-solid fa-arrow-up-right-from-square"></i> Demo</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 4 -->
+      <div class="glass-card project-card">
+        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80" alt="House Price Prediction" class="project-img"/>
+        <div class="project-content">
+          <h3 class="project-title">House Price Prediction</h3>
+          <p class="project-desc">Supervised machine learning regression model built with robust feature scaling and exploratory data visualization.</p>
+          <div class="project-tech">
+            <span class="tech-pill">Python</span>
+            <span class="tech-pill">Scikit-learn</span>
+            <span class="tech-pill">Seaborn</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="btn btn-outline"><i class="fa-brands fa-github"></i> Code</a>
+            <a href="#" class="btn btn-primary"><i class="fa-solid fa-arrow-up-right-from-square"></i> Demo</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 5 -->
+      <div class="glass-card project-card">
+        <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=600&q=80" alt="Fake News Detection" class="project-img"/>
+        <div class="project-content">
+          <h3 class="project-title">Fake News Classifier</h3>
+          <p class="project-desc">Text classification engine leveraging vectorization techniques to distinguish untrustworthy articles from reliable news sources.</p>
+          <div class="project-tech">
+            <span class="tech-pill">NLP</span>
+            <span class="tech-pill">TF-IDF</span>
+            <span class="tech-pill">Logistic Regression</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="btn btn-outline"><i class="fa-brands fa-github"></i> Code</a>
+            <a href="#" class="btn btn-primary"><i class="fa-solid fa-arrow-up-right-from-square"></i> Demo</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 6 -->
+      <div class="glass-card project-card">
+        <img src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a?auto=format&fit=crop&w=600&q=80" alt="AI Chatbot" class="project-img"/>
+        <div class="project-content">
+          <h3 class="project-title">Intelligent AI Chatbot</h3>
+          <p class="project-desc">Contextual conversational bot configured to respond to natural language queries using rule-based parsing and pattern matching.</p>
+          <div class="project-tech">
+            <span class="tech-pill">Python</span>
+            <span class="tech-pill">NLTK</span>
+            <span class="tech-pill">API Integration</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="btn btn-outline"><i class="fa-brands fa-github"></i> Code</a>
+            <a href="#" class="btn btn-primary"><i class="fa-solid fa-arrow-up-right-from-square"></i> Demo</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Experience & Education -->
+  <section class="section container" id="experience">
+    <h2 class="section-title">Timeline & <span>Education</span></h2>
+    <p class="section-subtitle">Academic foundations and professional trajectory.</p>
+    
+    <div class="timeline">
+      
+      <!-- Experience Item -->
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">2026 - PRESENT</div>
+        <div class="glass-card">
+          <h3>Data Science & AI Aspirant (Fresher)</h3>
+          <p style="color: var(--accent-cyan); font-weight: 500; margin-bottom: 0.5rem;">Open for Opportunities</p>
+          <p>Actively applying core concepts of machine learning algorithms, statistical modelling, and dataset analysis through independent projects, open-source repositories, and hands-on exercises.</p>
+        </div>
+      </div>
+
+      <!-- Education Item -->
+      <div class="timeline-item" id="education">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">IN PROGRESS</div>
+        <div class="glass-card">
+          <h3>B.Tech in Computer Science Engineering</h3>
+          <p style="color: var(--accent-cyan); font-weight: 500; margin-bottom: 0.5rem;">Specialization: Data Science & Artificial Intelligence</p>
+          <p><strong>Relevant Coursework:</strong> Data Structures & Algorithms, Database Management Systems, Operating Systems, Linear Algebra, Machine Learning Fundamentals, Object-Oriented Programming.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Certifications & Achievements -->
+  <section class="section container">
+    <h2 class="section-title">Certifications & <span>Achievements</span></h2>
+    <p class="section-subtitle">Validated skills and academic milestones.</p>
+    
+    <div class="grid-cards">
+      <div class="glass-card">
+        <div class="icon-box"><i class="fa-brands fa-python"></i></div>
+        <h3>Python for Data Science</h3>
+        <p style="color: var(--text-dim); font-size: 0.9rem;">Core syntax, algorithmic structures, and data manipulation libraries.</p>
+      </div>
+
+      <div class="glass-card">
+        <div class="icon-box"><i class="fa-solid fa-database"></i></div>
+        <h3>SQL Masterclass</h3>
+        <p style="color: var(--text-dim); font-size: 0.9rem;">Relational database querying, joins, subqueries, and table optimization.</p>
+      </div>
+
+      <div class="glass-card">
+        <div class="icon-box"><i class="fa-solid fa-brain"></i></div>
+        <h3>Machine Learning & Deep Learning</h3>
+        <p style="color: var(--text-dim); font-size: 0.9rem;">Supervised/Unsupervised models and neural network setup using Keras.</p>
+      </div>
+
+      <div class="glass-card">
+        <div class="icon-box"><i class="fa-solid fa-chart-line"></i></div>
+        <h3>Power BI & Analytics</h3>
+        <p style="color: var(--text-dim); font-size: 0.9rem;">Designing dynamic visual dashboards and business intelligence reporting.</p>
+      </div>
+    </div>
+  </section>
+  <!-- GitHub Statistics -->
+  <section class="section container">
+    <h2 class="section-title">GitHub <span>Metrics</span></h2>
+    <p class="section-subtitle">Consistent coding activity and active project development.</p>
+    
+    <div class="github-stats-wrapper">
+      <div class="glass-card stat-card">
+        <h3 class="counter" data-target="25">0</h3>
+        <p style="color: var(--text-muted);">Repositories</p>
+      </div>
+      <div class="glass-card stat-card">
+        <h3 class="counter" data-target="450">0</h3>
+        <p style="color: var(--text-muted);">Yearly Contributions</p>
+      </div>
+      <div class="glass-card stat-card">
+        <h3>Python</h3>
+        <p style="color: var(--text-muted);">Top Language</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section container">
+    <h2 class="section-title"><span>Testimonials</span></h2>
+    <p class="section-subtitle">Feedback from mentors, peers, and project collaborators.</p>
+    
+    <div class="grid-cards">
+      <div class="glass-card testimonial-card">
+        <p>"Sajid displays an exceptional dedication to understanding core Machine Learning concepts. His algorithmic approach to resolving data bugs is impressive."</p>
+        <div class="testimonial-user">
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" alt="Peer" />
+          <div>
+            <h5>Academic Mentor</h5>
+            <span>Computer Science Dept.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card testimonial-card">
+        <p>"A strong collaborator with excellent execution skills in Python and SQL. Sajid delivers clean code and maintains solid project documentation."</p>
+        <div class="testimonial-user">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" alt="Peer" />
+          <div>
+            <h5>Project Partner</h5>
+            <span>Hackathon Team Lead</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Section -->
+  <section class="section container" id="blog">
+    <h2 class="section-title">Latest <span>Articles</span></h2>
+    <p class="section-subtitle">Writing about AI, Data Science models, and programming practices.</p>
+    
+    <div class="projects-grid">
+      <div class="glass-card project-card">
+        <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=600&q=80" alt="Article 1" class="project-img"/>
+        <div class="project-content">
+          <span style="color: var(--accent-cyan); font-size: 0.8rem; font-family: var(--font-code);">DATA SCIENCE • 5 MIN READ</span>
+          <h3 class="project-title" style="margin-top: 0.5rem;">Understanding Feature Engineering in ML</h3>
+          <p class="project-desc">Why data preprocessing and scaling matter more than model selection in baseline performance.</p>
+          <a href="#" style="color: var(--accent-cyan); font-weight: 600; text-decoration: none;">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="glass-card project-card">
+        <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=600&q=80" alt="Article 2" class="project-img"/>
+        <div class="project-content">
+          <span style="color: var(--accent-cyan); font-size: 0.8rem; font-family: var(--font-code);">ARTIFICIAL INTELLIGENCE • 7 MIN READ</span>
+          <h3 class="project-title" style="margin-top: 0.5rem;">Getting Started with Neural Networks</h3>
+          <p class="project-desc">A intuitive breakdown of activation functions, backpropagation, and loss minimization.</p>
+          <a href="#" style="color: var(--accent-cyan); font-weight: 600; text-decoration: none;">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section container" id="contact">
+    <h2 class="section-title">Get In <span>Touch</span></h2>
+    <p class="section-subtitle">Have a project idea, question, or opportunity? Feel free to reach out!</p>
+    
+    <div class="contact-wrapper">
+      <div>
+        <div class="glass-card contact-info-item">
+          <div class="icon-box" style="margin-bottom:0;"><i class="fa-solid fa-envelope"></i></div>
+          <div>
+            <h5 style="color: var(--text-dim);">Email</h5>
+            <a href="mailto:rahisajid656@gmail.com" style="color: var(--text-main); text-decoration: none; font-weight: 500;">rahisajid656@gmail.com</a>
+          </div>
+        </div>
+
+        <div class="glass-card contact-info-item">
+          <div class="icon-box" style="margin-bottom:0;"><i class="fa-brands fa-linkedin-in"></i></div>
+          <div>
+            <h5 style="color: var(--text-dim);">LinkedIn</h5>
+            <a href="https://www.linkedin.com/in/md-sajid-alam-3708352b7" target="_blank" style="color: var(--text-main); text-decoration: none; font-weight: 500;">Md Sajid Alam</a>
+          </div>
+        </div>
+
+        <div class="glass-card contact-info-item">
+          <div class="icon-box" style="margin-bottom:0;"><i class="fa-brands fa-youtube"></i></div>
+          <div>
+            <h5 style="color: var(--text-dim);">YouTube</h5>
+            <a href="https://youtube.com/@aadarshspectrum" target="_blank" style="color: var(--text-main); text-decoration: none; font-weight: 500;">@aadarshspectrum</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div class="glass-card">
+        <form id="contact-form" onsubmit="event.preventDefault(); alert('Message submitted successfully!');">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" class="form-control" required placeholder="John Doe" />
+          </div>
+          <div class="form-group">
+            <label for="email">Your Email</label>
+            <input type="email" id="email" class="form-control" required placeholder="john@example.com" />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" class="form-control" required placeholder="Write your message here..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">Send Message <i class="fa-solid fa-paper-plane"></i></button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div>
+          <a href="#" class="logo">&lt;Sajid<span>.AI /&gt;</span></a>
+          <p style="color: var(--text-dim); margin-top: 0.5rem;">Turning Data Into Intelligence</p>
+        </div>
+        <div class="social-links">
+          <a href="https://github.com" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/md-sajid-alam-3708352b7" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://youtube.com/@aadarshspectrum" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="mailto:rahisajid656@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Md Sajid Alam. All Rights Reserved. Designed with ❤️ by Sajid Alam</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <a href="#" class="back-to-top" id="backToTop" aria-label="Back to Top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </a>
+
+  <!-- -------------------------------------------------------------------------- -->
+  <!-- JAVASCRIPT LOGIC                                                           -->
+  <!-- -------------------------------------------------------------------------- -->
+  <script>
+    /* Custom Cursor Following */
+    const cursorDot = document.querySelector('.cursor-dot');
+    const cursorOutline = document.querySelector('.cursor-outline');
+
+    window.addEventListener('mousemove', (e) => {
+      const posX = e.clientX;
+      const posY = e.clientY;
+
+      cursorDot.style.opacity = '1';
+      cursorOutline.style.opacity = '1';
+
+      cursorDot.style.left = `${posX}px`;
+      cursorDot.style.top = `${posY}px`;
+
+      cursorOutline.animate({
+        left: `${posX}px`,
+        top: `${posY}px`
+      }, { duration: 500, fill: "forwards" });
+    });
+
+    /* Typing Animation */
+    const typingText = document.querySelector('.typing-text');
+    const roles = ["Data Science Student", "Machine Learning Aspirant", "Python Developer", "AI Practitioner"];
+    let roleIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+
+    function typeEffect() {
+      const currentRole = roles[roleIndex];
+      if (isDeleting) {
+        typingText.textContent = currentRole.substring(0, charIndex - 1);
+        charIndex--;
+      } else {
+        typingText.textContent = currentRole.substring(0, charIndex + 1);
+        charIndex++;
+      }
+
+      let speed = isDeleting ? 50 : 100;
+
+      if (!isDeleting && charIndex === currentRole.length) {
+        speed = 2000;
+        isDeleting = true;
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        roleIndex = (roleIndex + 1) % roles.length;
+        speed = 500;
+      }
+
+      setTimeout(typeEffect, speed);
+    }
+    document.addEventListener('DOMContentLoaded', typeEffect);
+
+    /* Canvas Neural Network Effect */
+    const canvas = document.getElementById('canvas-bg');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    class Particle {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.vx = (Math.random() - 0.5) * 1.2;
+        this.vy = (Math.random() - 0.5) * 1.2;
+        this.radius = Math.random() * 2 + 1;
+      }
+
+      update() {
+        this.x += this.vx;
+        this.y += this.vy;
+
+        if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+        if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+      }
+
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fillStyle = '#38bdf8';
+        ctx.fill();
+      }
+    }
+
+    function initParticles() {
+      particles = [];
+      const count = Math.floor((canvas.width * canvas.height) / 15000);
+      for (let i = 0; i < count; i++) {
+        particles.push(new Particle());
+      }
+    }
+    initParticles();
+
+    function animateParticles() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+      for (let i = 0; i < particles.length; i++) {
+        particles[i].update();
+        particles[i].draw();
+
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+
+          if (dist < 120) {
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.strokeStyle = `rgba(56, 189, 248, ${1 - dist / 120})`;
+            ctx.lineWidth = 0.5;
+            ctx.stroke();
+          }
+        }
+      }
+      requestAnimationFrame(animateParticles);
+    }
+    animateParticles();
+
+    /* Scroll Listener for Navbar, BackToTop, and Scroll Progress */
+    const navbar = document.querySelector('.navbar');
+    const backToTopBtn = document.getElementById('backToTop');
+    const progressBar = document.getElementById('scroll-progress');
+
+    window.addEventListener('scroll', () => {
+      // Navbar scrolling state
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+        backToTopBtn.classList.add('active');
+      } else {
+        navbar.classList.remove('scrolled');
+        backToTopBtn.classList.remove('active');
+      }
+
+      // Scroll Progress Calculation
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      progressBar.style.width = scrolled + '%';
+    });
+
+    /* Theme Toggle Switcher */
+    const themeBtn = document.getElementById('theme-btn');
+    themeBtn.addEventListener('click', () => {
+      const currentTheme = document.body.getAttribute('data-theme');
+      if (currentTheme === 'light') {
+        document.body.removeAttribute('data-theme');
+        themeBtn.innerHTML = '<i class="fa-solid fa-moon"></i>';
+      } else {
+        document.body.setAttribute('data-theme', 'light');
+        themeBtn.innerHTML = '<i class="fa-solid fa-sun"></i>';
+      }
+    });
+
+    /* Mobile Menu Toggle */
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    /* Intersection Observer for Animated Progress Bars & Counters */
+    const observerOptions = { threshold: 0.3 };
+
+    const skillsSection = document.getElementById('skills');
+    const skillProgressBars = document.querySelectorAll('.skill-progress');
+
+    const skillsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          skillProgressBars.forEach(bar => {
+            bar.style.width = bar.getAttribute('data-width');
+          });
+        }
+      });
+    }, observerOptions);
+
+    if (skillsSection) skillsObserver.observe(skillsSection);
+    // Number Counters
+    const counters = document.querySelectorAll('.counter');
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const target = +entry.target.getAttribute('data-target');
+          let count = 0;
+          const speed = target / 50;
+          const updateCount = () => {
+            count += speed;
+            if (count < target) {
+              entry.target.innerText = Math.ceil(count);
+              setTimeout(updateCount, 30);
+            } else {
+              entry.target.innerText = target + "+";
+            }
+          };
+          updateCount();
+          counterObserver.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    counters.forEach(counter => counterObserver.observe(counter));
+  </script>
+</body>
+</html>
